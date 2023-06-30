@@ -7,3 +7,6 @@ def home():
 
     """In May 2023 Tam promissed his friends he would play World of Warcraft for 3 months starting at some point during the summer of 2023. This website tracks if Tam has played WoW yet, and reminds him of his commitment. 
     """
+    
+if __name__ == '__main__':
+    app.run(debug=True)
