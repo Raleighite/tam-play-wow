@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.py": {
+      "name": "Flask application and root handler",
+      "description": "Creates a Flask app, initializes Flask-Bootstrap, defines GET / returning fixed text about game progress, and starts the debug server when launched directly. Flask-Bootstrap is imported but missing from requirements.txt."
+    },
+    "README.md": {
+      "name": "Owner usage guide",
+      "description": "Describes the application and manual Python setup; it is not evidence of runtime success."
+    },
+    "LICENSE": {
+      "name": "Original project license",
+      "description": "Preserves the original MIT permission and copyright notice."
+    }
+  },
+  "routes": {
+    "GET /": {
+      "name": "Root response",
+      "description": "Returns a fixed string about playing WoW and leveling. No game API, persisted state or automatic progress check is implemented."
+    }
+  }
+}
