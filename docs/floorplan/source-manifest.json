@@ -1,0 +1,43 @@
+{
+  "schema": "floorplan/source-manifest@1",
+  "repository": "Raleighite/tam-play-wow",
+  "source_commit": "c0409f0b4386ee182a9db25ae8709f65efe7f235",
+  "scope": "Static source mapping; no runtime or deployed-state claim.",
+  "source_policy": "Git-tracked/unignored source/config/templates/static per check_freshness.py, including Procfile; docs/tests/dependencies/cache excluded. Baseline is original unredacted source.",
+  "source_files": {
+    "Procfile": "b1301d2fa8aa9d46902a668df830d3e831d47b7ec22e281adc7339953a80787b",
+    "main.py": "d7457a18e6cd6ef2ba0e917ec8c7e3fe8cecf082ff3670d59a8050bf2e49f56b",
+    "requirements.txt": "eed2dfd8db4ac47187412c557967372fd90bbd9c532822dbc53a8d6a242a6ac5"
+  },
+  "admitted_snapshot": {
+    "main.py": "d7457a18e6cd6ef2ba0e917ec8c7e3fe8cecf082ff3670d59a8050bf2e49f56b",
+    "LICENSE": "278c0c447ae8be6d5e6b745f064cfc8672bdb36672a22df5d981fa1fc2443967",
+    "README.md": "39f407dab8dac8c40e080fed4e3a9d3a74bc78e91801b348fd0aa365c6ff3ece"
+  },
+  "counts": {
+    "files": 3,
+    "codeFiles": 1,
+    "routes": 1,
+    "modules": 3,
+    "unassigned": 0,
+    "flows": 1,
+    "tour": 3,
+    "links": 3
+  },
+  "artifacts": {
+    "check_freshness.py": "9d941c34d0b3647da6754819c32c51d83cadf2339a6fe7bcbf614c7dc81c22dd",
+    "source-review.json": "bc86705d17ba505e1541811d671f877170c0e5832743d9803aad3abd313db578",
+    "generator.json": "9ea82c4dab83d0426cb94272b0dbea80d989ef862872f1961c3ad60e13015330",
+    "architecture.json": "a8beb3a77b5421215ce40a8807c89820b031367710a39381d5ae048a0e1be692",
+    "NOTICE.md": "1b961d21b4feedd4af9be96ea51dd05d1f7cf45304ab4fe88d95ba0cebeada2f",
+    "index.html": "d7505283852e3c234264b1e8933083474070832ed54c854f55e5fe097d1fbe61",
+    "README.md": "8a9f4b9a52a8507d197dbe2a0a5faa529bc662c99eb8a9616fcc11f68597282c",
+    "descriptions/reviewed.json": "e974fc92092758f16ff07d64358256740f87b40945a9a13b13e8137780f66e24",
+    "tests/test_freshness.py": "a99031f01872d56d1b14430537b999d1ebf455f461919a5cd7641b193e4710a0",
+    "licenses/inter-LICENSE.txt": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+    "licenses/elkjs-LICENSE.md": "89591d4578fb1ebd91501312a3d25f021bd865a2e436641c1cf7b1bc7e3c1617",
+    "licenses/LICENSE": "65a06a9dab105cd5a2b713a41a020a442bd431e6e19631182ed3889fd1672faf",
+    "licenses/jetbrains-mono-LICENSE.txt": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b",
+    "licenses/source/LICENSE": "278c0c447ae8be6d5e6b745f064cfc8672bdb36672a22df5d981fa1fc2443967"
+  }
+}

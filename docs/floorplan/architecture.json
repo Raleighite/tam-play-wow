@@ -1,0 +1,107 @@
+{
+  "$schema": "floorplan/architecture@1",
+  "audience": "everyone",
+  "project": {
+    "name": "tam-play-wow",
+    "summary": "A single-file Flask page serving a manually written statement about WoW progress, not a live tracker.",
+    "entrypoints": [
+      "main.py"
+    ]
+  },
+  "include": [
+    "code",
+    "config",
+    "docs",
+    "other"
+  ],
+  "nodes": [
+    {
+      "id": "startup",
+      "label": "Application startup",
+      "summary": "Creates the Flask app and selects the development port from PORT; production Procfile uses Gunicorn.",
+      "paths": [
+        "main.py",
+        "README.md",
+        "LICENSE"
+      ],
+      "kind": "service"
+    },
+    {
+      "id": "handler",
+      "label": "Root response",
+      "summary": "Returns a fixed text statement, not live game activity.",
+      "paths": [
+        "main.py"
+      ],
+      "kind": "service"
+    },
+    {
+      "id": "visitor",
+      "label": "HTTP visitor",
+      "summary": "Requests the root page and receives the literal response.",
+      "paths": [],
+      "kind": "external"
+    }
+  ],
+  "edges": [
+    {
+      "from": "visitor",
+      "to": "handler",
+      "label": "Request GET /",
+      "description": "Request GET /.",
+      "kind": "data"
+    },
+    {
+      "from": "startup",
+      "to": "handler",
+      "label": "Register root handler",
+      "description": "Register root handler.",
+      "kind": "data"
+    },
+    {
+      "from": "handler",
+      "to": "visitor",
+      "label": "Return constant response",
+      "description": "Return constant response.",
+      "kind": "data"
+    }
+  ],
+  "flows": [
+    {
+      "id": "root",
+      "title": "Read the root response",
+      "steps": [
+        {
+          "node": "visitor",
+          "note": "Send a root-page request."
+        },
+        {
+          "node": "handler",
+          "note": "Returns a fixed string about playing WoW and leveling. No game API, persisted state or automatic progress check is implemented."
+        },
+        {
+          "node": "visitor",
+          "note": "Receive the constant response; no record is looked up."
+        }
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "node": "startup",
+      "title": "Start with one source file",
+      "note": "main.py contains the complete application. Procfile and requirements.txt are freshness-pinned launch/dependency files but excluded by conservative admission."
+    },
+    {
+      "node": "handler",
+      "title": "A constant response, not a data service",
+      "note": "Returns a fixed string about playing WoW and leveling. No game API, persisted state or automatic progress check is implemented."
+    },
+    {
+      "node": "startup",
+      "title": "Runtime was not exercised",
+      "note": "Only static source and the exported map were tested. Flask-Bootstrap is missing from the pinned requirements, so successful startup is not claimed."
+    }
+  ],
+  "annotations": []
+}

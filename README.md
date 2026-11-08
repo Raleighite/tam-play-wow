@@ -10,3 +10,7 @@ In May 2023, Tam promised his friends he would play WoW for 3 months starting so
 pip install -r requirements.txt
 python main.py
 ```
+
+## Architecture map
+
+Download and open [the offline Floorplan](docs/floorplan/index.html). Start here, search and Flows explain the pinned source, not a tested deployment. See [scope, licenses and freshness checks](docs/floorplan/README.md).
